@@ -1,0 +1,14 @@
+mixin cardFullwidth(link, title, content, img, tags, className)
+    div(class=`card-fullwidth ${className || ''}`)
+        a.stretched-link(href=link)
+        .card-fullwidth__wrp
+            .card-fullwidth__media
+                img.card-fullwidth__img(src=img width="400px" height="417px")
+
+            .card-fullwidth__body
+                h2.card-fullwidth__title=title
+                p.card-fullwidth__text=content
+
+                .card-fullwidth__tags
+                  each tag in tags
+                      a.card-fullwidth__tag=tag

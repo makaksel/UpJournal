@@ -1,0 +1,152 @@
+.search{
+  $this: &;
+  width: 100%;
+
+  gap: rem(32);
+  margin-bottom: rem(80);
+
+  display: flex;
+  flex-direction: column;
+
+
+  &__input{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input-controller {
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: box-shadow .2s ease-in-out;
+    border-radius: rem(20);
+
+
+    &.error {
+
+
+      #{$this}__input-input{
+        box-shadow: 0 0 0 rem(2) red;
+      }
+
+
+      #{$this}__input-icon {
+        fill: red;
+        opacity: .75;
+        animation-name: search-rotation;
+        animation-duration: 1s;
+        animation-iteration-count: 2;
+        animation-timing-function: linear;
+      }
+    }
+
+    &.loading{
+
+      #{$this}__input-icon {
+        fill: var(--blue-30);
+        animation-name: search-rotation;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+    }
+  }
+
+
+  &__input-icon {
+    position: absolute;
+    left: rem(24);
+    width: rem(24);
+    height: rem(24);
+    fill: var(--gray-20);
+
+    @include sm {
+      left: rem(16);
+    }
+  }
+
+  &__input-input {
+    width: 100%;
+    padding: rem(11) rem(20) rem(11) rem(64);
+
+    height: rem(40);
+    border: rem(1) solid var(--gray-20);
+    border-radius: rem(20);
+    transition: box-shadow 0.2s ease-in-out;
+
+    font-size: rem(14);
+    line-height: rem(18);
+
+    outline: 0;
+
+    color: var(--black);
+    background-color: transparent;
+
+    &::placeholder {
+      color: var(--gray-20);
+      opacity: .8;
+      font-family: Onest, serif;
+    }
+    &:-ms-input-placeholder {
+      color: var(--gray-20);
+      opacity: .8;
+      font-family: Onest, serif;
+    }
+    &::-ms-input-placeholder {
+      color: var(--gray-20);
+      opacity: .8;
+      font-family: Onest, serif;
+    }
+
+    &:focus{
+      box-shadow: 0 0 0 rem(2) var(--blue-30);
+    }
+  }
+
+
+  &__input-error-text {
+    font-size: rem(12);
+    margin-top: rem(5);
+    color: red
+  }
+
+
+
+  &__tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(12);
+  }
+
+  &.show{
+    //animation: show 300ms forwards;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+  }
+  50% {
+    opacity: .5;
+    height: 50%;
+    margin-bottom: rem(80);
+  }
+  100% {
+    height: 100%;
+    opacity: 1;
+    overflow: visible;
+    margin-bottom: rem(80);
+  }
+}
+
+@keyframes search-rotation {
+  0% {transform: translate(-2px, -2px)}
+  25% {transform: translate(2px, 2px)}
+  50% {transform: translate(-2px, 2px)}
+  75% {transform: translate(2px, 2px)}
+  100% {transform: translate(-2px, -2px)}
+}

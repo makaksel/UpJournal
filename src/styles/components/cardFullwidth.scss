@@ -1,0 +1,139 @@
+.card-fullwidth{
+  position: relative;
+  display: flex;
+
+  margin: rem(80) 0;
+
+  @include sm {
+    margin: rem(50) 0;
+  }
+
+  @include xs{
+    margin: rem(60) 0;
+  }
+
+  &__wrp{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    gap: rem(40);
+    @include cursor-pointer-global;
+  }
+
+  &:nth-child(even){
+    flex-direction: row-reverse;
+  }
+
+  &__media{
+    height: 100%;
+    border-radius: rem(16);
+    overflow: hidden;
+    flex: 1;
+    @include cursor-pointer-global;
+  }
+
+  &__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: flex;
+  }
+
+  &__body{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    @include cursor-pointer-global;
+  }
+
+  &__title{
+    font-size: rem(32);
+    line-height: rem(40);
+    margin-bottom: rem(20);
+  }
+  &__text{
+    color: var(--gray-20);
+    font-size: rem(16);
+    line-height: rem(22);
+    margin-bottom: rem(25);
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(12);
+  }
+
+  &__tag{
+    display: inline-flex;
+    align-items: center;
+    height: rem(34);
+    padding: rem(7) rem(16);
+
+    color: var(--blue-20);
+    background-color: var(--blue-10);
+    font-weight: $Weight500;
+
+    border-radius: rem(22);
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  @include sm {
+    margin-bottom: rem(30);
+
+    &__wrp{
+      gap: rem(20);
+    }
+
+    &__title{
+      order: 0;
+      font-size: rem(25);
+      line-height: rem(31);
+      margin-bottom: rem(15);
+    }
+    &__text{
+      color: var(--gray-20);
+      font-size: rem(16);
+      line-height: rem(22);
+      margin-bottom: rem(0);
+      order: 2;
+    }
+
+    &__tags{
+      margin-bottom: rem(22);
+      order: 1;
+      gap: rem(8) rem(12);
+    }
+
+  }
+
+
+  @include xs{
+    &__wrp{
+      gap: rem(20);
+      flex-direction: column;
+
+    }
+
+    &__body {
+      flex: 0;
+    }
+
+    &__title{
+      margin-bottom: rem(15);
+    }
+
+    &__text{
+      margin-bottom: rem(20);
+    }
+
+  }
+
+}

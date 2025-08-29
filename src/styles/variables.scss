@@ -1,0 +1,21 @@
+@import "functions";
+@import "media-queries";
+
+$Weight300: 300;
+$Weight400: 400;
+$Weight500: 500;
+$Weight700: 700;
+$Weight800: 800;
+$Weight900: 900;
+
+:root {
+  //text-sizes
+  --text__size: #{rem(16)};
+
+  --text__line-height: #{rem(22)};
+
+  //margins
+  --x-offset-main: #{rem(20)};
+}
+
+

@@ -1,0 +1,6 @@
+mixin textAreaInput(inputName, placeholder, inputName)
+  - type = type || 'text'
+  - placeholder = placeholder || 'Введите значение'
+    div(class=('text-area'))
+        .text-area__controller
+            textarea(placeholder=placeholder name=inputName).text-area__input

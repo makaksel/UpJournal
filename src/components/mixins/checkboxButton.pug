@@ -1,0 +1,10 @@
+mixin checkboxButton(name, className)
+    div(class=(`checkbox-button ${className}`))
+        label.checkbox-button__label(for=name)
+            input.checkbox-button__input(type='checkbox' name=name id=name, disabled=disabled)
+            span.checkbox-button__content
+                block
+
+
+
+

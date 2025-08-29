@@ -1,0 +1,38 @@
+include ../components/mixins/page
+include ../components/mixins/textInput
+include ../components/mixins/textAreaInput
+include ../components/mixins/checkbox
+
++page('contacts', "Контакты")
+    .container
+        .contacts
+            h1.contacts__title Контакты
+            .notification
+                p.notification__title Напишите нам, и менеджер ответит за 5 минут
+
+                .notification__body
+                    span
+                        | Тел:&nbsp;
+                        a.notification__link(href="tel:+78905677890") +7 890 567-78-90
+                    span
+                        | E-mail:&nbsp;
+                        a.notification__link(href="mailto:info@uptitle.ru") info@uptitle.ru
+                    span
+                        | Tg:&nbsp;
+                        a.notification__link(href="https://t.me/uptitle" target="_blank") @uptitle
+
+            form.contacts__form(id="contacts-form" name="contacts-form" novalidate)
+                h2.contacts__form-title Форма обратной связи
+
+                +textInput('text', 'Ваше имя', '', 'name', true)
+                +textInput('text', 'Телефон', '', 'phone', true)
+                +textInput('text', 'Почта', '', 'email', true)
+                +textAreaInput('text', 'Комментарий', 'comment')
+
+                .contacts__form-footer
+                    .politic
+                        +checkbox('politic', true) Я даю согласие на обработку своих персональных данных согласно&nbsp;
+                                a(href="politic.html") Политики в отношении обработки персональных данных
+                    .contacts__form-actions
+                        button.btn.btn-big.btn-blue.btn-outline(type="button" id="contact-form_consultation") Мне нужна консультация
+                        button.btn.btn-big.btn-blue(type="button" id="contact-form_send") Отправить статью

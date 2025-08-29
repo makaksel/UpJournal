@@ -1,0 +1,76 @@
+
+.service-card {
+  $this: &;
+
+  @include flex-column();
+  height: rem(343);
+  padding: rem(20);
+  border-radius: rem(30);
+  background-color: var(--blue-10);
+  transition: background-color .2s, color .2s, box-shadow .2s;
+  cursor: pointer;
+
+  > * {
+    cursor: pointer;
+  }
+
+  &__body {
+    @include flex-column();
+  }
+
+  &__badge {
+    padding: rem(10) rem(16);
+    margin-bottom: rem(10);
+    max-width: max-content;
+
+    color: var(--white);
+    background-color: var(--blue-30);
+
+    font-size: rem(16);
+    line-height: rem(20);
+    border-radius: rem(50);
+  }
+
+  &__title {
+    color: var(--black);
+    font-weight: $Weight700;
+    font-size: rem(24);
+    line-height: rem(27);
+  }
+
+  &__footer {
+    margin-top: auto;
+  }
+
+  &__btn {
+    width: 100%;
+    height: auto;
+    padding: rem(16) rem(20);
+
+    font-weight: $Weight400;
+    font-size: rem(16);
+    line-height: rem(22);
+  }
+
+  &.active {
+    background-color: var(--blue-30);
+
+    #{$this}__badge {
+      color: var(--blue-30);
+      background-color: var(--blue-10);
+    }
+
+    #{$this}__title {
+      color: var(--white);
+    }
+  }
+
+  &.error {
+    box-shadow: 0 0 0 rem(3) red;
+  }
+
+
+  @include xss {
+    height: rem(248);
+  }
+}

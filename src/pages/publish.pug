@@ -1,0 +1,38 @@
+include ../components/mixins/page
+include ../components/mixins/textInput
+include ../components/mixins/textAreaInput
+include ../components/mixins/checkbox
+include ../components/serviceCard
+
++page('publish', "Опубликовать статью")
+    .container
+        .publish
+            .publish__header
+                h1.publish__title Опубликовать статью
+                p Выберите формат публикации который вас интересует и дальше текст про все про то, что мы тут предлагаем и так далее и тому подобное. После отправки или оплаты наш менеджер свяжется с вами и тд.
+
+            .services-publish
+                .services-publish__table
+                    +serviceCard('with-promotion', '10 000 ₽', 'Публикация с продвижением')
+                    +serviceCard('advertising', '20 000 ₽', 'Рекламная публикация')
+
+            form.publish__form(id="publish-form" name="publish-form" novalidate)
+                h2.publish__form-title Форма обратной связи
+                input.publish__form_input-amount.hidden(id="publish-amount" name="amount" value='0')
+                +textInput('text', 'Ваше имя', '', 'name', true)
+                +textInput('text', 'Телефон', '', 'phone', true)
+                +textInput('text', 'Почта', '', 'email', true)
+                +textAreaInput('text', 'Комментарий', 'comment')
+
+                .publish__form-footer
+                    .politic
+                        +checkbox('politic', true) Я даю согласие на обработку своих персональных данных согласно&nbsp;
+                            a(href="politic.html") Политики в отношении обработки персональных данных
+                        +checkbox('politic2', true) Я ознакомился с политикой конфиденциальности
+
+                    .publish__form-actions
+                        button.btn.btn-big.btn-blue.btn-outline(type="button" id="btn-consultation") Мне нужна консультация
+                        div.publish__form-actions_primary
+                            div.price
+                                span.price__text
+                            button.btn.btn-big.btn-blue(type="button" id="btn-publish") Отправить статью

@@ -1,0 +1,145 @@
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+
+@mixin list-style {
+  ol, ul{
+    margin: 0;
+    padding: 0;
+  }
+
+  ol{
+    counter-reset: my-counter;
+    list-style-type: none;
+
+    li{
+      counter-increment: my-counter;
+      position: relative;
+      padding-left: rem(52);
+
+      &::before {
+        font-family: Onest, serif;
+        content: counter(my-counter, decimal-leading-zero) ".";
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+
+  ul{
+    list-style-type: none;
+
+    li{
+      position: relative;
+      padding-left: rem(52);
+
+      &::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+}
+
+@mixin blockquote {
+  blockquote{
+    @include flex-column;
+    width: 100%;
+
+    margin: 0 0 rem(32) 0;
+    padding: rem(20);
+
+    border-radius: rem(20);
+    background-color: var(--blue-10);
+
+    p{
+      padding-left: rem(38);
+      margin-bottom: rem(10);
+
+      &:nth-child(1){
+        position: relative;
+
+        &:before{
+          content: url(../images/chevron-left.svg);;
+          position: absolute;
+          left: 0;
+          top: rem(5);
+        }
+      }
+    }
+
+    > h5, h6{
+      margin: 0;
+      font-weight: $Weight400;
+      font-size: rem(14);
+      line-height: rem(18);
+      text-align: right;
+    }
+  }
+
+}
+
+
+@mixin wp-styles {
+  h1{
+    margin-bottom: rem(40);
+  }
+
+  * + h2, * + h3{
+    padding-top: rem(20);
+  }
+
+  h2{
+    margin-bottom: rem(32);
+  }
+
+  p{
+    margin-bottom: rem(32);
+    line-height: rem(28);
+  }
+
+  @include list-style;
+
+  li{
+    margin-bottom: rem(32);
+  }
+
+  @include blockquote;
+
+  img{
+    width: 100%;
+    height: rem(320);
+    display: flex;
+    margin-bottom: rem(15);
+    object-fit: cover;
+    border-radius: rem(16);
+    overflow: hidden;
+  }
+
+  .wp-caption-text{
+    margin-top: rem(20);
+    font-weight: $Weight500;
+    font-size: rem(14);
+    line-height: rem(18);
+    color: var(--gray-20);
+  }
+
+  hr{
+    height: rem(2);
+    width: 100%;
+    margin: 0 0 rem(32) 0;
+    background-color: var(--gray-10);
+    border: none;
+  }
+
+}
+
+@mixin cursor-pointer-global {
+  cursor: pointer;
+  > * {
+    cursor: pointer;
+  }
+}

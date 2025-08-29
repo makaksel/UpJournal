@@ -1,0 +1,32 @@
+include ../components/mixins/button
+
+
+header(class='header')
+    .container
+        .header__content
+            a.header__logo
+                svg(viewBox="0 0 131 24" width="131" height="24")
+                    use(xlink:href="#logo-color")
+            nav.header__nav
+                a(href="index.html" class=(activePage === 'index' ? 'header__nav-item active' : 'header__nav-item')) Актуальное
+                a(href="articles.html" class=(activePage === 'articles' ? 'header__nav-item active' : 'header__nav-item')) Статьи
+                a(href="about.html" class=(activePage === 'about' ? 'header__nav-item active' : 'header__nav-item')) О журнале
+                a(href="contacts.html" class=(activePage === 'contacts' ? 'header__nav-item active' : 'header__nav-item')) Контакты
+                a(href="https://t.me/uptitle" target="_blank").header__nav-item Телеграмм
+            nav.header__actions
+                a.btn.search-btn(href="articles.html#search")
+                    svg(viewBox="0 0 24 24" width="24" height="24")
+                        use(xlink:href="#search")
+                button.btn.lang-btn EN
+            a(href="publish.html").btn.btn-blue.btn-outline.btn-publish Опубликовать
+            button.btn.header__burger
+                svg(viewBox="0 0 24 24" width="24" height="24")
+                    use(xlink:href="#burger")
+            .header__burger-menu
+                nav.header__burger-menu-nav
+                    a(href="index.html" class=(activePage === 'index' ? 'header__burger-menu-link active' : 'header__burger-menu-link')) Актуальное
+                    a(href="articles.html" class=(activePage === 'articles' ?  'header__burger-menu-link active' : 'header__burger-menu-link')) Статьи
+                    a(href="about.html" class=(activePage === 'about' ? 'header__burger-menu-link active' : 'header__burger-menu-link')) О журнале
+                    a(href="contacts.html" class=(activePage === 'contacts' ? 'header__burger-menu-link active' : 'header__burger-menu-link')) Контакты
+                    a(href="https://t.me/uptitle" target="_blank").header__burger-menu-link Телеграмм
+                    a(href="publish.html").btn.btn-blue.btn-outline.btn-publish Опубликовать

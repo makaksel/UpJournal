@@ -1,0 +1,8 @@
+
+mixin serviceCard(name, price, title, className)
+    div(class=`service-card ${className ? className : ''}`, data-service-name=name)
+        .service-card__body
+            span.service-card__badge=price
+            p.service-card__title=title
+        .service-card__footer
+            button.btn.service-card__btn Выбрать

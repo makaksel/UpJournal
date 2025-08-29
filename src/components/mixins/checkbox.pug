@@ -1,0 +1,9 @@
+mixin checkbox(name, required)
+    .checkbox
+        input.checkbox__input(type='checkbox' name=name id=name disabled=disabled required=required)
+        label.checkbox__label(for=name)
+            span.checkbox__icon
+            if block
+                span
+                    block
+

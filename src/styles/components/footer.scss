@@ -1,0 +1,78 @@
+.footer {
+  background-color: var(--gray-10);
+  color: var(--black);
+  font-size: rem(16);
+  line-height: rem(23);
+
+  &__content {
+    display: flex;
+
+    width: 100%;
+    padding: rem(150) 0;
+
+  }
+
+  &__logo {
+    margin-right: rem(140);
+    cursor: pointer;
+  }
+
+  &__left {
+    display: flex;
+    gap: rem(30);
+
+    margin-right: auto;
+
+    &-col {
+      display: flex;
+      flex-direction: column;
+      gap: rem(16);
+    }
+
+    &-link {
+      color: var(--black);
+      white-space: nowrap;
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+
+    &-link {
+      display: flex;
+      align-items: center;
+      gap: rem(10);
+      color: var(--black);
+      white-space: nowrap;
+    }
+  }
+
+
+
+
+  @include lg {
+    &__content {
+
+      padding: rem(90) 0;
+    }
+  }
+
+  @include sm {
+    &__logo{
+      width: 100%;
+    }
+    &__content {
+      gap: rem(30);
+      flex-wrap: wrap;
+      align-items: flex-end;
+      padding: rem(40) 0;
+    }
+  }
+
+  @include xs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}

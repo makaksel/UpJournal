@@ -1,0 +1,19 @@
+include ../components/mixins/textInput
+
+form.search.show(id="search-block__form")
+    .search__input
+        div(class=('search__input'))
+            .search__input-controller
+                span.search__input-icon
+                    svg(viewBox="0 0 24 24" width="24" height="24")
+                        use(xlink:href="#search")
+                input(type="text" placeholder="Введите поисковый запрос" name="search").search__input-input
+
+
+    .search__tags
+        +checkboxButton("test") Интервью
+        +checkboxButton("test2") Экономика
+        +checkboxButton("test3") История
+        +checkboxButton("test4") Экономика
+        +checkboxButton("test5") Экономическая теория
+        +checkboxButton("test6") Интервью

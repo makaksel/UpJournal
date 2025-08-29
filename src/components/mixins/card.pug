@@ -1,0 +1,17 @@
+mixin card(title, content, img, tags)
+    .card
+        a.stretched-link(href="article.html")
+        if img
+            .card__media
+                img.card__img(src=img, alt=title, width="200px" height="165px")
+
+        .card__body
+            p.card__title=title
+
+            if content
+                p.card__content=content
+
+            if tags
+                .card__tags
+                  each tag in tags
+                      a.card__tag=tag

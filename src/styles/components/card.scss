@@ -1,0 +1,71 @@
+.card {
+  $this: &;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  @include cursor-pointer-global;
+
+  &__media {
+    height: rem(165);
+    margin-bottom: rem(20);
+    border-radius: rem(13);
+    overflow: hidden;
+    flex: 0 1 auto;
+    @include cursor-pointer-global;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: flex;
+  }
+
+
+  &__body {
+    @include cursor-pointer-global;
+  }
+
+  &__title {
+    font-weight: $Weight500;
+    font-size: rem(18);
+    line-height: rem(20);
+    margin: 0;
+  }
+
+  &__content {
+    font-size: rem(16);
+    line-height: rem(22);
+
+    margin: rem(10) 0 0 0;
+
+    color: var(--gray-20);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(8);
+    margin: rem(12) 0 0 0;
+  }
+
+  &__tag {
+    padding: rem(3) rem(8);
+
+    color: var(--gray-20);
+    background-color: var(--gray-10);
+
+    font-weight: $Weight500;
+    font-size: rem(14);
+    line-height: rem(18);
+    border-radius: rem(11);
+  }
+}

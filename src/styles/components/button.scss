@@ -1,0 +1,164 @@
+.btn {
+  $this: &;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: none;
+  flex-grow: 0;
+
+  height: rem(32);
+  padding: rem(7) rem(16);
+  min-width: min-content;
+
+  outline: none;
+  border: none;
+  box-shadow: none;
+
+  border-radius: rem(20);
+  font-size: rem(14);
+  line-height: rem(18);
+  font-weight: $Weight500;
+
+  background-color: var(--white);
+  color: var(--black);
+
+
+  cursor: pointer;
+  transition: opacity .15s;
+
+  > * {
+    cursor: pointer;
+  }
+
+
+  &-blue {
+    background-color: var(--blue-30);
+    color: var(--white);
+  }
+
+  &-outline {
+    border: rem(2) solid var(--blue-30);
+    color: var(--blue-30);
+    background-color: var(--white);
+
+    #{$this}-blue {
+      background-color: var(--white);
+      color: var(--blue-30);
+    }
+
+    @include sm {
+      border-radius: rem(10);
+    }
+  }
+
+  &-rounded{
+    height: rem(42);
+    padding: rem(12) rem(18);
+
+    font-size: rem(16);
+    line-height: rem(20);
+    font-weight: $Weight500;
+
+    color: var(--gray-20);
+    background-color: var(--gray-10);
+
+    border-radius: rem(20);
+
+    @include sm {
+      padding: rem(5) rem(12);
+    }
+  }
+
+  &-big{
+    height: rem(63);
+
+    font-size: rem(18);
+    line-height: rem(23);
+
+    @include sm {
+      height: rem(46);
+      padding: rem(14);
+
+      font-size: rem(14);
+      line-height: rem(18);
+    }
+  }
+
+
+  &:hover {
+    opacity: 0.65;
+  }
+
+  &.loading {
+    pointer-events: none;
+    position: relative;
+    opacity: 0.65;
+
+    &:after {
+      content: url(../images/spinner.svg);
+      position: relative;
+      left: rem(5);
+      width: rem(24);
+      height: rem(24);
+
+      animation-name: rotation;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    &#{$this}-blue {
+      &:after {
+        content: url(../images/spinner-white.svg);
+      }
+    }
+
+    &#{$this}-outline {
+      &:after {
+        content: url(../images/spinner.svg);
+      }
+    }
+  }
+
+  &.success {
+    position: relative;
+
+    &:after {
+      content: url(../images/check.svg);
+      position: relative;
+      left: rem(5);
+      width: rem(24);
+      height: rem(24);
+    }
+
+    &#{$this}-blue {
+      &:after {
+        content: url(../images/check-white.svg);
+      }
+    }
+
+    &#{$this}-outline {
+      &:after {
+        content: url(../images/check.svg);
+      }
+    }
+  }
+
+
+  &[disabled] {
+    pointer-events: none;
+    opacity: 0.65;
+  }
+
+}

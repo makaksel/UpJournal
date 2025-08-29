@@ -1,0 +1,29 @@
+mixin page(activePage, title)
+    include ../mixins/card
+    include ../mixins/textInput
+
+    - var viewTitle = title ? `UpJournal - ${title}` : "UpJournal"
+
+    doctype html
+    html(lang='ru')
+        head
+
+            meta(charset='UTF-8')
+            meta(http-equiv="X-UA-Compatible" content="ie=edge")
+            meta(name='viewport' content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+            title=viewTitle
+
+            link(href='assets/css/styles.min.css' rel='stylesheet')
+
+        body(class='page')
+            include ../svgSprites
+            include ../header
+
+            main.main
+                block
+
+
+            include ../footer
+
+        script(src='https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js')
+        script(src='assets/js/index.js')

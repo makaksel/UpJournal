@@ -1,0 +1,54 @@
+.checkbox-button {
+  $this: &;
+
+  &__label {
+    display: inline-flex;
+    position: relative;
+    border-radius: rem(20);
+
+
+    #{$this}__input {
+      position: absolute;
+      opacity: 0;
+      z-index: -1;
+    }
+
+    #{$this}__input:checked ~ #{$this}__content {
+      font-weight: $Weight500;
+      color: var(--blue-30);
+      background-color: var(--blue-10);
+    }
+  }
+
+
+  &__content {
+    display: inline-flex;
+    align-items: center;
+
+    padding: rem(12) rem(18);
+
+    font-size: rem(14);
+    line-height: rem(18);
+
+    color: var(--gray-20);
+    background-color: var(--gray-10);
+
+    border-radius: rem(20);
+    cursor: pointer;
+    user-select: none;
+
+    transition: background-color .15s, opacity .15s;
+
+    #{$this}__label:hover & {
+      opacity: 0.6;
+    }
+
+    > * {
+      cursor: pointer;
+    }
+  }
+
+}
+
+
+

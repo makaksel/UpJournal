@@ -1,0 +1,150 @@
+.primary {
+
+  &-block {
+    width: 100%;
+    padding: rem(60) 0;
+    margin: rem(80) 0;
+    background-color: var(--blue-10);
+
+    @include sm {
+      padding: rem(40) 0;
+      margin: rem(50) 0;
+    }
+
+    @include xs{
+      padding: rem(20) 0 rem(40);
+      margin: rem(50) 0;
+    };
+  }
+
+  &-card {
+    display: flex;
+    justify-content: space-between;
+
+    gap: rem(40);
+
+    @include cursor-pointer-global;
+
+
+    &__media {
+      border-radius: rem(16);
+      overflow: hidden;
+      flex: 1;
+      @include cursor-pointer-global;
+    }
+
+    &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: flex;
+    }
+
+    &__body {
+      flex: 1;
+      @include cursor-pointer-global;
+    }
+
+    &__title {
+      font-size: rem(32);
+      line-height: rem(40);
+      margin-bottom: rem(16);
+    }
+
+    &__text {
+      font-size: rem(16);
+      line-height: rem(22);
+      margin-bottom: rem(10);
+    }
+
+    &__author {
+      color: var(--blue-20)
+    }
+
+    &__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: rem(12);
+      margin-bottom: rem(20);
+    }
+
+    &__tag {
+      display: inline-flex;
+      padding: rem(7) rem(16);
+
+      font-size: rem(20);
+      line-height: rem(25);
+
+      color: var(--blue-20);
+      background-color: var(--white);
+
+
+      border-radius: rem(22);
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    &__action {
+      width: 100%;
+      padding: rem(16);
+      height: auto;
+
+      border-radius: rem(18);
+      font-weight: $Weight400;
+      font-size: rem(16);
+      line-height: rem(22);
+    }
+
+
+    @include sm {
+      gap: rem(20);
+
+      &__title {
+        font-size: rem(25);
+        line-height: rem(32);
+        margin-bottom: rem(12);
+      }
+
+      &__text {
+        margin-bottom: rem(20);
+
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      &__tags {
+        gap: rem(10);
+        margin-bottom: rem(20);
+      }
+
+      &__tag {
+        font-size: rem(12);
+        line-height: rem(15);
+      }
+
+      &__action {
+        padding: rem(16);
+      }
+
+
+      &__author{
+        display: none;
+      }
+
+    }
+
+    @include xs{
+      gap: rem(40);
+      flex-direction: column;
+
+      &__body {
+        flex: 0;
+      }
+    }
+
+
+  }
+}
+

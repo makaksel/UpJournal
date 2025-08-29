@@ -1,0 +1,15 @@
+include ./button
+mixin primaryCard(title, content, author, img, tags, className)
+    .primary-block
+        .container
+            .primary-card
+                .primary-card__media
+                    img.primary-card__img(src=img width="400px" height="422px" alt=title)
+                .primary-card__body
+                    h2.primary-card__title=title
+                    .primary-card__tags
+                      each tag in tags
+                          a.primary-card__tag=tag
+                    p.primary-card__text=content
+                    p.primary-card__author=author
+                    +button('primary-card__action') Читать статью

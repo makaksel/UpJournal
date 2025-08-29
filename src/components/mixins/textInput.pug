@@ -1,0 +1,11 @@
+mixin textInput(type, placeholder, iconName, inputName, required)
+  - type = type || 'text'
+  - placeholder = placeholder || 'Введите значение'
+    div(class=('text-input'))
+        .text-input__controller
+            if iconName
+                span.text-input__icon
+                    svg(viewBox="0 0 24 24" width="24" height="24")
+                        use(xlink:href="#" + iconName)
+
+            input(type=type placeholder=placeholder name=inputName required=required).text-input__input
