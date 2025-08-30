@@ -8,10 +8,10 @@ Built with **Gulp**, supports automated build, optimization, and live-reload.
 ## ✨ Preview
 
 ### Desktop version
-![Desktop preview](docs/screenshot-desktop.png)
+![Desktop preview](screenshot-desktop.png)
 
 ### Mobile version
-![Mobile preview](docs/screenshot-mobile.png)
+![Mobile preview](screenshot-mobile.png)
 
 Live demo available at:  
 👉 [https://makaksel.github.io/UpJournal/](https://makaksel.github.io/UpJournal/)
@@ -24,6 +24,23 @@ Live demo available at:
 - **Flexbox / Grid** for layout
 - **GitHub Pages** for deployment
 
+---
+## 📂 Project structure
+```
+upjournal/
+├── docs/           # Documentation
+├── gulp/           # Gulp build files
+│ ├── config/       # Configuration files
+│ └── tasks/        # Individual gulp tasks
+├── src/            # Source code
+│ ├── assets/       # Media (images, fonts, etc.)
+│ ├── components/   # Interface components
+│ ├── pages/        # Project pages
+│ ├── scripts/      # JS
+│ └── styles/       # Styles (SCSS/CSS)
+└── gulpfile.js     # Build gulp
+
+```
 ---
 
 ## ⚡ Installation & Usage
@@ -61,10 +78,10 @@ npm run build
 ## ✨ Превью
 
 ### Десктопная версия
-![Desktop preview](docs/screenshot-desktop.png)
+![Desktop preview](screenshot-desktop.png)
 
 ### Мобильная версия
-![Mobile preview](docs/screenshot-mobile.png)
+![Mobile preview](screenshot-mobile.png)
 
 Онлайн-версия доступна по ссылке:  
 👉 [https://makaksel.github.io/UpJournal/](https://makaksel.github.io/UpJournal/)
@@ -77,6 +94,24 @@ npm run build
 - **Flexbox / Grid** для вёрстки
 - **GitHub Pages** для публикации
 
+---
+
+## 📂 Структура проекта
+```
+upjournal/
+├── docs/           # Документация
+├── gulp/           # Файлы сборки gulp
+│ ├── config/       # Конфигурационные файлы
+│ └── tasks/        # Отдельные gulp-задачи
+├── src/            # Исходный код проекта
+│ ├── assets/       # Медиафайлы (изображения, шрифты и т.п.)
+│ ├── components/   # Компоненты интерфейса
+│ ├── pages/        # Страницы проекта
+│ ├── scripts/      # JS
+│ └── styles/       # Стили (SCSS/CSS)
+└── gulpfile.js     # Сборка gulp
+
+```
 ---
 
 ## ⚡ Установка и запуск
